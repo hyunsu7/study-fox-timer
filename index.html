@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>빠로로와 함께하는 공부하루</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Status bar mock -->
+    <div class="status-bar">
+      <span class="time">11:39</span>
+      <div class="status-icons">
+        <span>📶</span>
+        <span>📡</span>
+        <span>🔋 90</span>
+      </div>
+    </div>
+
+    <!-- Header with character -->
+    <div class="header">
+      <div class="header-top">
+        <div class="d-day">D-26</div>
+        <div class="date">11. 20 (금)</div>
+        <div class="menu-btn">☰</div>
+      </div>
+
+      <div class="character-area">
+        <div class="character">
+          <div class="pororo">🐧</div>
+          <div class="badge">빠로로</div>
+        </div>
+        <div class="speech-bubble">
+          <div class="bubble-text">오늘의 공부 시간은</div>
+          <div class="total-time" id="totalTime">0:00:00</div>
+          <div class="cheer">빠로로와 함께 화이팅! ❄️</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="timer">타이머</button>
+      <button class="tab" data-tab="books">교재</button>
+      <button class="tab" data-tab="stats">통계</button>
+      <button class="tab" data-tab="planner">플래너</button>
+    </div>
+
+    <!-- Subject List -->
+    <div class="subject-list" id="subjectList">
+      <!-- Subjects will be rendered by JS -->
+    </div>
+
+    <div class="edit-subjects">
+      <button id="editSubjectsBtn">✏️ 과목 편집</button>
+    </div>
+
+    <!-- Save / Share Button -->
+    <div class="save-area">
+      <button class="save-btn" id="saveBtn">
+        📷 오늘의 공부 기록 저장하기
+      </button>
+      <button class="share-btn" id="shareBtn">
+        공유하기 🐧
+      </button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+      <button class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span>홈</span>
+      </button>
+      <button class="nav-item">
+        <span class="nav-icon">✅</span>
+        <span>할 일</span>
+      </button>
+      <button class="nav-item">
+        <span class="nav-icon">📅</span>
+        <span>달력</span>
+      </button>
+      <button class="nav-item">
+        <span class="nav-icon">👥</span>
+        <span>그룹</span>
+      </button>
+      <button class="nav-item sparkle">
+        <span class="nav-icon">✨</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal for Save Card Preview -->
+  <div class="modal" id="saveModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>오늘의 공부 기록</h3>
+        <button class="close-btn" id="closeModal">✕</button>
+      </div>
+      <div class="card-preview" id="cardPreview">
+        <!-- Generated card will appear here -->
+      </div>
+      <div class="modal-actions">
+        <button class="download-btn" id="downloadBtn">이미지로 저장</button>
+        <button class="copy-btn" id="copyBtn">이미지 복사</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Subjects Modal -->
+  <div class="modal" id="editModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>과목 편집</h3>
+        <button class="close-btn" id="closeEditModal">✕</button>
+      </div>
+      <div class="edit-list" id="editList"></div>
+      <button class="add-subject-btn" id="addSubjectBtn">+ 과목 추가</button>
+      <button class="save-edit-btn" id="saveEditBtn">저장</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
